@@ -11,7 +11,7 @@ def select_name(names, finish_names)
 end
 
 # 参加者の配列
-names = %W[浅沼 内堀 内海 小倉 小野 加藤 神田 チャーリー 近藤 新谷 高篠 田村 近野 出島 野﨑 増山 村田]
+names = %W[浅沼 内堀 内海 小倉 小野 加藤 神田 チャーリー 近藤 新谷 高篠 田村 近野 デイジー 野﨑 塾長 村田]
 
 resting_names = []
 # 休みの人の配列
