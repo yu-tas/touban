@@ -7,7 +7,7 @@ def select_name(names, finish_names)
   end
   selected_name = remaining_name.sample # シャッフルする
   finish_names << selected_name # シャッフルして選ばれた人を既に朝礼を行なっている人の配列に追加する
-  selected_name # 今日の朝礼を行う人が決まる
+  selected_name # 明日の朝礼を行う人が決まる
 end
 
 # 参加者の配列
@@ -15,7 +15,7 @@ names = %W[浅沼 内堀 内海 小倉 小野 加藤 神田 チャーリー 近�
 
 resting_names = []
 # 休みの人の配列
-puts "今日は休みの人いる? 1:いる 2:いない"
+puts "明日は休みの人いる? 1:いる 2:いない"
 answer = gets.chomp #休みの人を入力する
 while answer == "1"
   if answer == "1"
@@ -37,9 +37,9 @@ if File.exist?("finish_names.txt") # finish_namesの内容を読み込む
   finish_names = File.read("finish_names.txt").split("\n")
 end
 
-# 朝礼を行う人を1人だけ選らんで表示
+# 朝礼/終礼を行う人を1人だけ選らんで表示
 selected_name = select_name(names, finish_names)
-puts "今日の朝礼/終礼を行う人は#{selected_name}さんです。"
+puts "明日の朝礼/終礼を行う人は#{selected_name}さんです。"
 
 # finish_namesの内容をファイルに保存
 File.open("finish_names.txt", "w") { |file| file.write(finish_names.join("\n")) }
